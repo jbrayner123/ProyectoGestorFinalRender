@@ -72,8 +72,8 @@ Entregar un MVP funcional e integrado que:
 
 * **Base de datos:** Se migró de JSON a **MySQL** para persistencia real, el  impacto es positivo: integridad referencial, facilidad de consultas, concurrente real.
 
-* **Modelo de datos:** Se consolidaron `users`, `tasks`, `notifications` (3 entidades). Reduce complejidad inicial y permite cumplir el requisito de 3 entidades con relaciones.
-
+* **Modelo de datos:** Se consolidaron `users`, `tasks`, `notifications`, `categories` (4 entidades). Reduce complejidad inicial y permite cumplir el requisito de 34 entidades con relaciones.
+  
 * **Seguridad:** Se añadió hashing robusto con Passlib (`pbkdf2_sha256`) y JWT para sesiones; impacto: mejora la seguridad y cumplimiento de la rúbrica.
 
 ## **6\. Notas técnicas relevantes**
