@@ -8,7 +8,7 @@ python-dotenv==1.0.0
 passlib[bcrypt]==1.7.4
 python-jose[cryptography]==3.3.0
 email-validator==2.1.0
-
+gunicorn
 httpx==0.24.1
 pydantic==1.10.12
 PyMySQL==1.1.0

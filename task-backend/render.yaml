@@ -1,0 +1,40 @@
+services:
+  # Backend API
+  - type: web
+    name: task-backend
+    runtime: python
+    rootDir: task-backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: DATABASE_URL
+        value: mysql+pymysql://admin:TasksDB2024!Secure@tasks-db-production.cnse4eayeaej.us-east-2.rds.amazonaws.com:3306/tasks_db
+      - key: DB_HOST
+        value: tasks-db-production.cnse4eayeaej.us-east-2.rds.amazonaws.com
+      - key: DB_PORT
+        value: 3306
+      - key: DB_USER
+        value: admin
+      - key: DB_PASSWORD
+        value: TasksDB2024!Secure
+      - key: DB_NAME
+        value: tasks_db
+      - key: SECRET_KEY
+        generateValue: true
+      - key: RATE_LIMIT_AUTH_PER_MIN
+        value: 5
+      - key: RATE_LIMIT_API_PER_MIN
+        value: 60
+      - key: PYTHON_VERSION
+        value: 3.10.0
+
+  # Frontend
+  - type: web
+    name: task-frontend
+    runtime: node
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://task-backend.onrender.com
