@@ -1,4 +1,4 @@
-# **Gestor de Trabajo Personal — Entregable 2 (MVP Integrado)**
+# **Gestor de Trabajo Personal — Entregable 3 (MVP Integrado)**
 # Emmanuel Roman Solarte Aguirre - Brayner Minotta Ruiz - José Alejandro Castillo Arce
 ## **Elevator Pitch**
 
